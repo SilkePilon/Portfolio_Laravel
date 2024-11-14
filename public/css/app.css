@@ -1,0 +1,709 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    /* Colors */
+    --primary-color: #00c0a9;
+    --secondary-color: #91a7ff;
+    --text-color: #7d89a6;
+    --heading-code-color: #ffffff;
+    --content-background-color: #131c30;
+    --content-background-color-2: rgba(125, 137, 166, 0.5);
+    --background-color: #0f172a;
+    --border-color: rgb(125, 137, 166, 0.2) solid 0.5px;
+    --skills-bar-color: rgb(125, 137, 166, 0.3);
+    --accent-color: #cbd8f8;
+
+    /* Typography */
+    --font-family: "Fira Code", monospace;
+    --font-size-base: 16px;
+
+    /* Other */
+    --max-width: 1200px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    color: var(--text-color);
+}
+
+.header,
+.main,
+.footer {
+    margin: auto;
+    max-width: var(--max-width);
+}
+
+/* .about-section,
+  .skills-section{
+    animation: fade-in linear;
+    animation-timeline: view(.1rem);
+
+  }
+
+  @keyframes  fade-in {
+    from {scale: .9; opacity: 0;}
+    to {scale: .9; opacity: 1;}
+  }
+  */
+
+/* Common styles */
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+.code-text {
+    color: var(--primary-color);
+    padding: 0.1rem;
+}
+
+.section-p {
+    color: var(--heading-code-color);
+}
+
+.code-text2 {
+    color: var(--secondary-color);
+}
+
+/* Header styles */
+
+.nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    color: var(--heading-code-color);
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+}
+
+.header-logo img {
+    width: 25px;
+    padding-right: 8px;
+}
+
+.header-logo-name {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.nav-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-size: 20px;
+    font-weight: regular;
+    margin-left: 40px;
+    letter-spacing: 0.1rem;
+}
+
+nav ul li a::before {
+    content: "<";
+    color: var(--primary-color);
+    opacity: 0;
+}
+nav ul li a::after {
+    content: ">";
+    color: var(--primary-color);
+    opacity: 0;
+}
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+}
+nav ul li a:hover::after {
+    opacity: 1;
+}
+
+.dark-light-icon {
+    align-content: center;
+    padding-left: 20px;
+}
+/* Nav-Move-Transition */
+
+/* Hero section styles */
+.hero-section {
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    color: var(--heading-code-color);
+    font-size: 45px;
+    font-weight: 400;
+    margin: auto;
+}
+
+.hero-text h1 span {
+    font-weight: bold;
+}
+
+.hero-text h2 {
+    color: var(--heading-code-color);
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.hero-p {
+    line-height: 1.5rem;
+}
+
+.hero-img {
+    width: 50%;
+    position: relative;
+}
+
+.hero-img img {
+    width: 540px;
+    position: absolute;
+    right: 0;
+}
+
+/* hero img hover */
+.hero-img img:hover {
+    transition: 0.5s;
+    filter: saturate(150%);
+}
+
+/* Hero socials styles */
+.hero-social-icons {
+    display: flex;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+/* Hero btn styles */
+.hero-btn {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.hero-btn1:hover,
+.hero-btn2:hover {
+    transform: scale(1.05);
+}
+.hero-btn1 {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 8px 20px;
+    gap: 5px;
+    border-radius: 30px;
+}
+
+.hero-btn1 img {
+    width: 25px;
+}
+
+.hero-btn1 button {
+    background-color: transparent;
+    border: none;
+    color: var(--heading-code-color);
+    font-size: 18px;
+    font-family: var(--font-family);
+    cursor: pointer;
+}
+
+.hero-btn2 {
+    display: flex;
+    align-items: center;
+    border: var(--border-color);
+    background-color: var(--content-background-color);
+    padding: 8px 20px;
+    gap: 5px;
+    border-radius: 30px;
+}
+
+.hero-btn2 button {
+    background-color: transparent;
+    border: none;
+    color: var(--heading-code-color);
+    font-size: 18px;
+    font-family: var(--font-family);
+    cursor: pointer;
+}
+
+/* About section styles */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+.about-img {
+    background-color: var(--content-background-color);
+    position: relative;
+    border-radius: 10px;
+}
+
+.about-img img {
+    width: 260px;
+    position: absolute;
+    right: 0;
+    border-radius: 10px;
+}
+
+.about-img img:hover {
+    transition: 0.5s;
+    transform: rotate(-25deg);
+    border-radius: 25px;
+}
+
+.about-me-text {
+    width: 70%;
+}
+
+.about-me-text p:hover {
+    border: 0.5px solid var(--primary-color);
+    background-color: var(--background-color);
+    transition: 0.5s;
+}
+.about-me-text p {
+    border: var(--border-color);
+    border-radius: 6px;
+    padding: 30px;
+    margin-bottom: 35px;
+    background-color: var(--content-background-color);
+}
+
+.about-me-text h3 {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* Skills section styles */
+.skills-section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.skills-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-text-p {
+    margin: 0;
+}
+
+.skills-text h2 {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 15px;
+}
+
+.skills-text p {
+    margin: 0;
+    padding-top: 15px;
+}
+
+.skills-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.grid-items {
+    background-color: var(--content-background-color);
+    border-radius: 8px;
+    border: var(--border-color);
+    text-align: center;
+    align-content: center;
+    padding: 25px 10px;
+}
+.skills-icon-heading {
+    color: var(--heading-code-color);
+    font-weight: normal;
+}
+
+.skills-bar-icon {
+    margin: 0;
+    grid-column: 1/5;
+    height: 102px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.html,
+.css,
+.js {
+    background-color: var(--content-background-color);
+    display: flex;
+    width: 380px;
+    height: auto;
+    border-radius: 8px;
+    padding: 0 3px 15px 0;
+    border: var(--border-color);
+    flex-direction: column;
+}
+
+.html-icon-p,
+.css-icon-p,
+.js-icon-p {
+    display: flex;
+    gap: 10px;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.hmtl-bar,
+.css-bar,
+.js-bar {
+    background: var(--skills-bar-color);
+    border-radius: 4px;
+    margin: 0 20px;
+}
+
+.html-bar-color {
+    width: 85%;
+    border: 2px solid #ea580c;
+    border-radius: 2px;
+    animation: progresshtml 1s ease-in-out forwards;
+}
+
+@keyframes progresshtml {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+.css-bar-color {
+    width: 65%;
+    border: 2px solid #2196f3;
+    border-radius: 2px;
+    animation: progresscss 0.9s ease-in-out forwards;
+}
+
+@keyframes progresscss {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 70%;
+    }
+}
+
+.js-bar-color {
+    width: 10%;
+    border: 2px solid #ffdf00;
+    border-radius: 2px;
+    animation: progressjs 1s ease-in-out forwards;
+}
+
+@keyframes progressjs {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 10%;
+    }
+}
+/* hover effect for skills */
+.grid-items:hover,
+.html:hover,
+.css:hover,
+.js:hover {
+    border: 0.5px solid var(--primary-color);
+    background-color: var(--background-color);
+    transition: 0.5s;
+}
+
+/* Form section styles */
+.form-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+.form-text-additional {
+    width: 30%;
+    padding-right: 50px;
+}
+
+.form-text-additional h2 {
+    color: var(--heading-code-color);
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.form-box {
+    width: 800px;
+    height: 500px;
+    border: var(--border-color);
+    border-radius: 8px;
+    /* background: var(--content-background-color); */
+}
+
+.contact-mail,
+.contact-call,
+.contact-address {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* main-form */
+form {
+    padding: 50px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"] {
+    background: none;
+    border: var(--border-color);
+    border-radius: 6px;
+    padding: 0.8rem 0.5rem;
+    color: var(--secondary-color);
+    width: 18rem;
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+textarea {
+    background: none;
+    border: var(--border-color);
+    padding: 1rem 1rem 0 1rem;
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 41.5rem;
+}
+
+button {
+    background: none;
+    color: var(--heading-code-color);
+    border: none;
+    font-size: 18px;
+    font-family: var(--font-family);
+    padding: 8px 20px;
+    border-radius: 25px;
+}
+#submit-btn {
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+#reset-btn {
+    cursor: pointer;
+    background-color: none;
+    border: var(--border-color);
+}
+
+.form-box:hover {
+    transition: 0.5s;
+    border-color: var(--primary-color);
+}
+
+/* Footer styles */
+.footer {
+    border-top: var(--border-color);
+    display: flex;
+    padding-top: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.footer-logo,
+.footer-github {
+    display: flex;
+}
+
+.footer-logo p {
+    margin-right: 10px;
+}
+
+.footer-github p {
+    margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+}
+
+.code-editor {
+    width: 100%;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+    font-family: "Consolas", "Courier New", monospace;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.code-editor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tabs {
+    display: flex;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+.tab {
+    padding: 8px 16px;
+    background-color: #1e1e1e;
+    border: none;
+    border-right: 1px solid #333;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #2a2a2a;
+}
+
+.tab.active {
+    background-color: #252526;
+}
+
+.tab-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 10px;
+    border-radius: 2px;
+}
+
+.js-icon {
+    background-color: #f9e64f;
+    color: black;
+}
+
+.py-icon {
+    background-color: #4584b6;
+    color: white;
+}
+
+.code-area {
+    padding: 16px;
+    background-color: #252526;
+    overflow-x: auto;
+    transition: opacity 0.3s ease;
+}
+
+.code-area pre {
+    margin: 0;
+}
+
+.code-area code {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Syntax highlighting */
+.language-js .comment,
+.language-py .comment {
+    color: #6a9955;
+}
+.language-js .keyword,
+.language-py .keyword {
+    color: #569cd6;
+}
+.language-js .string,
+.language-py .string {
+    color: #ce9178;
+}
+.language-js .number,
+.language-py .number {
+    color: #b5cea8;
+}
+.language-js .property {
+    color: #9cdcfe;
+}
+
+/* Animation for tab switching */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.code-area {
+    animation: fadeIn 0.3s ease;
+}
